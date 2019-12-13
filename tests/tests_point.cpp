@@ -25,3 +25,20 @@ TEST_CASE("Point equality comparisons work", "[eq]") {
 	REQUIRE(p3 != p2);
 	REQUIRE(p4 != p2);
 }
+
+TEST_CASE("Point.move() changes point", "[move]") {
+    Point p1;
+
+    CHECK(p1.x() == 0);
+    CHECK(p1.y() == 0);
+
+    p1.move(3, -5);
+
+    REQUIRE(p1.x() == 3);
+    REQUIRE(p1.y() == -5);
+
+    p1.move(2, 2);
+
+    REQUIRE(p1.x() == 5);
+    REQUIRE(p1.y() == -3);
+}
